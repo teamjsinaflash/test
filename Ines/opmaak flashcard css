@@ -1,0 +1,143 @@
+body {
+ background-image: url("https://images.pexels.com/photos/82256/pexels-photo-82256.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+  background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+/* https://davidwalsh.name/demo/css-flip.php */
+/* entire container, keeps perspective */
+.flip-container {
+  margin: 15vh auto;
+  -webkit-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+
+
+.flip-container, .front, .back {
+  width: 30vw;
+  height: 45vw;
+  border-radius: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .flip-container {
+    margin: 10vh auto;
+  }
+
+
+}
+.front, .back {
+  text-align: center;
+  font-family: 'Pacifico';
+  font-size: 2.4em;
+  line-height: 1em;
+  padding-top: calc(50% - .5em);
+  color: #465B6B;
+  border: 3px solid #424242;
+}
+
+
+
+/* hide back of pane during swap */
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateY(0deg);
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  -o-transform: rotateY(0deg);
+  -ms-transition: 0.6s;
+  -ms-transform-style: preserve-3d;
+  -ms-transform: rotateY(0deg);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  background-color: #6699ff;
+}
+
+
+
+.del {
+  position: absolute;
+  bottom: 10px;
+  right: 140px;
+  border-radius: 51%;
+  border: 2px solid #424242;
+  width: 2em;
+  height: 2em;
+  font-size: .5em;
+  font-family: verdana;
+  font-weight: bold;
+  color: #424242;
+  background-color: #E6EBDA;
+}
+
+.plus {
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+  border-radius: 51%;
+  border: 2px solid #424242;
+  width: 2em;
+  height: 2em;
+  font-size: .5em;
+  font-family: verdana;
+  font-weight: bold;
+  color: #424242;
+  background-color: #E6EBDA;
+}
+
+.previous {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  border-radius: 51%;
+  border: 2px solid #FFFFFF;
+  width: 2em;
+  height: 2em;
+  font-size: .5em;
+  font-family: verdana;
+  font-weight: bold;
+  color: #E6EBDA;
+  background-color: #424242;
+}
+
+.next {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 51%;
+  border: 2px solid #FFFFFF;
+  width: 2em;
+  height: 2em;
+  font-size: .5em;
+  font-family: verdana;
+  font-weight: bold;
+  color: #E6EBDA;
+  background-color: #424242;
+}

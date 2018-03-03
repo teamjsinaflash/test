@@ -1,0 +1,48 @@
+.flex-container {
+  display: flex;
+}
+
+.flashcard {
+  display: flex;
+  flex: 1;
+  max-width: 400px;
+  height: 600px;
+  background:  khaki ;
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+ 
+}
+
+.front-inner {
+/*   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  max-width: 250px;
+  height: 200px; 
+  background: darkkhaki;
+  padding: 10px;
+}
+
+.back-inner {
+  width: 250px;
+  height: 200px;
+  background: firebrick;
+  padding: 10px;
+}
+
+p {
+/*font: font-style font-variant font-weight font-size/line-height font-family    */
+  font:  16px/1.45 lucida console;
+  color: #fff;
+}
+
+.title-text {
+  display: block;
+  margin: 0 0 20px 0;
+  font: 12px/1.45 arial;
+}

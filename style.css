@@ -1,6 +1,9 @@
+/* Ines: I used this tutorial for the flipping of the card https://www.youtube.com/watch?v=OV8MVmtgmoY&t=195s*/
+
 .flex-container {
   display: flex;
   padding: 20px;
+
 }
 
 .flashcard {
@@ -14,30 +17,45 @@
   position: relative;
   align-items: center;
   justify-content: center;
+
+  transform-style: preserve-3d; /* if left out - the result of the flip is a reverse of the front-element */
+  transition: all 0.5s ease; /*the flip*/
+
+}
+.flashcard:hover {transform:rotateY(180deg); /*the card flips from the container*/
+
+
 }
 
 .front-inner {
-/*   position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   width: 250px;
   height: 200px;
   background: darkkhaki;
   padding: 10px;
+
+  backface-visibility: hidden; /*if left out - different layers will conflict resulting in flickering*/
+
 }
 
 .back-inner {
   width: 250px;
   height: 200px;
-  background: firebrick;
+  background: blue;
   padding: 10px;
+   backface-visibility: hidden; /*if left out - different layers will conflict resulting in flickering*/
+
+  transform: rotateY(180deg); /*back element flips back to the front when we move the curser away */
 }
 
 p {
 /*font: font-style font-variant font-weight font-size/line-height font-family    */
   font:  16px/1.45 lucida console;
   color: #fff;
+
 }
 
 .title-text {

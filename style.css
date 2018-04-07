@@ -1,65 +1,48 @@
-/* Ines: I used this tutorial for the flipping of the card https://www.youtube.com/watch?v=OV8MVmtgmoY&t=195s*/
-
 .flex-container {
   display: flex;
-  padding: 20px;
+}
 
+.flip-container {
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flip-container:hover .flashcard {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front-inner, .back-inner {
+  width: 400px;
+  height: 600px;
 }
 
 .flashcard {
-  display: flex;
-  flex: 1;
-  max-width: 400px;
-  height: 600px;
-  background:  green;
-  margin: 10px;
-  border-radius: 10px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
   position: relative;
-  align-items: center;
-  justify-content: center;
-
-  transform-style: preserve-3d; /* if left out - the result of the flip is a reverse of the front-element */
-  transition: all 0.5s ease; /*the flip*/
-
 }
-.flashcard:hover {transform:rotateY(180deg); /*the card flips from the container*/
 
 
+.front-inner, .back-inner {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: lucida console;
+  border-radius: 10px;
 }
 
 .front-inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 250px;
-  height: 200px;
-  background: darkkhaki;
+  background: blue;
   padding: 10px;
-
-  backface-visibility: hidden; /*if left out - different layers will conflict resulting in flickering*/
-
+  color: white;
+  z-index: -1;
+  transform: rotateY(0deg);
 }
 
 .back-inner {
-  width: 250px;
-  height: 200px;
-  background: blue;
+  background: green;
+  color: white;
   padding: 10px;
-   backface-visibility: hidden; /*if left out - different layers will conflict resulting in flickering*/
-
-  transform: rotateY(180deg); /*back element flips back to the front when we move the curser away */
-}
-
-p {
-/*font: font-style font-variant font-weight font-size/line-height font-family    */
-  font:  16px/1.45 lucida console;
-  color: #fff;
-
-}
-
-.title-text {
-  display: block;
-  margin: 0 0 20px 0;
-  font: 12px/1.45 arial;
+  transform: rotateY(180deg);
 }

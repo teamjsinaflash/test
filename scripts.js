@@ -3,25 +3,28 @@
 // It should have a way to display a flashcard
 // It should have a way to delete a flashcard
 
-let flashcardObject = {
-	cards: [{front: "The front text", back: "The back text"}],
-	addCard: function(frontText, backText){
-		this.cards.push({front: frontText, back: backText});
-		this.displayCard();
-	},
-	displayCard: function(){
-		console.log(this.cards);
-	},
-	deleteCard: function(position){
-		this.cards.splice(position, 1);
-		this.displayCard();
-	}
-}
+// let flashcardObject = {
+	// cards: [{front: "The front text", back: "The back text"}],
+	
+// 	addCard: function(frontText, backText){
+// 		this.cards.push({front: frontText, back: backText});
+// 		this.displayCard();
+// 	},
+// 	displayCard: function(){
+// 		console.log(this.cards);
+// 	},
+// 	deleteCard: function(position){
+// 		this.cards.splice(position, 1);
+// 		this.displayCard();
+// 	}
+// }
+
 
 function myFunction(){
 	let question = document.getElementById("question").value;
+	document.getElementById("question").value = "";
 	let answer = document.getElementById("answer").value;
-
+	document.getElementById("answer").value = "";
 
 	let fragment = document.createDocumentFragment();
 
@@ -44,9 +47,15 @@ function myFunction(){
 	flashcard.appendChild(newCardFront);
 	flashcard.appendChild(newCardBack);
 
-
 	fragment.appendChild(flipContainer);
 
 	document.querySelector(".flex-container").appendChild(fragment);
-
 }
+
+
+
+
+
+
+
+

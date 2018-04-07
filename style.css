@@ -1,48 +1,50 @@
-.flex-container {
+/*.flex-container {
   display: flex;
 }
 
 .flip-container {
   perspective: 1000px;
   margin: 20px;
-}
+}*/
 
 .flip-container:hover .flashcard {
 /*  transform: rotateY(180deg);*/
 }
 
 .flip-container, .front-inner, .back-inner {
-  width: 400px;
-  height: 600px;
+  width: 200px;
+  height: 300px;
 }
-/*
-.flashcard {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}*/
 
+.flashcard {
+/*  transition: 0.6s;
+  transform-style: preserve-3d;*/
+  position: relative;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 
 .front-inner, .back-inner {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
   font-family: lucida console;
   border-radius: 10px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .front-inner {
   background: blue;
   padding: 10px;
   color: white;
-  z-index: -1;
-  transform: rotateY(0deg);
 }
 
 .back-inner {
   background: green;
   color: white;
   padding: 10px;
-  transform: rotateY(180deg);
 }

@@ -1,56 +1,75 @@
 // Requirements:
-// It should have a way to add a flashcard
-// It should have a way to display a flashcard
-// It should have a way to delete a flashcard
+// Show the front and back of the flashcard @jeroen
+// It should have a way to delete a flashcard @sue
+// Update the flashcard and the array 
+// Flashcards should go onto the next row if there's no more room @sue
+// part 2 - move the Editing using index to the card itself
 
-// let flashcardObject = {
-	// cards: [{front: "The front text", back: "The back text"}],
-	
-// 	addCard: function(frontText, backText){
-// 		this.cards.push({front: frontText, back: backText});
-// 		this.displayCard();
-// 	},
-// 	displayCard: function(){
-// 		console.log(this.cards);
-// 	},
-// 	deleteCard: function(position){
-// 		this.cards.splice(position, 1);
-// 		this.displayCard();
-// 	}
-// }
+let flashcardList = {
+	cards: [],
+	addCard: function(){
+		frontText = document.getElementById("question").value;
+		document.getElementById("question").value = "";
+		backText = document.getElementById("answer").value;
+		document.getElementById("answer").value = "";
+		console.log(frontText, backText);
+		this.cards.push({front: frontText, back: backText});
 
+		this.displayCard();
+	},
+	displayCard: function(){
+		let flashcard = document.createElement("div");
+		flashcard.className = "flashcard";
 
-function myFunction(){
-	let question = document.getElementById("question").value;
-	document.getElementById("question").value = "";
-	let answer = document.getElementById("answer").value;
-	document.getElementById("answer").value = "";
+		let newCardFront = document.createElement("div");
+		newCardFront.className = "front-inner";
+		newCardFront.innerHTML = frontText;
 
-	let fragment = document.createDocumentFragment();
+		let newCardBack = document.createElement("div");
+		newCardBack.className = "back-inner";
+		newCardBack.classList.add("hidden");
+		newCardBack.innerHTML = backText;
 
-	let flipContainer = document.createElement("div");
-	flipContainer.className = "flip-container";
+		let deleteButton = document.createElement("button");
+		deleteButton.innerHTML = "delete";
+		deleteButton.className = "deleteButton";
+		deleteButton.onclick = function () {
+			alert('hi!');
+			debugger;
+			flashcardList.cards.splice(0, 1);
+			flashcardList.displayCard();
+		}
 
-	let flashcard = document.createElement("div");
-	flashcard.className = "flashcard";
+		let flipButton = document.createElement("button");
+		flipButton.innerHTML = "flip";
+		flipButton.className = "flipButton";
+		
+		let flexContainer = document.querySelector(".flex-container");
 
-	let newCardFront = document.createElement("div");
-	newCardFront.className = "front-inner";
-	newCardFront.innerHTML = question;
+		flashcard.appendChild(newCardFront);
+		flashcard.appendChild(newCardBack);
+		flashcard.appendChild(deleteButton);
+		flashcard.appendChild(flipButton);
 
-	let newCardBack = document.createElement("div");
-	newCardBack.className = "back-inner";
-	newCardBack.innerHTML = answer;
+		flexContainer.appendChild(flashcard);
+	},
+	deleteCard: function(position){
 
-	flipContainer.appendChild(flashcard);
-
-	flashcard.appendChild(newCardFront);
-	flashcard.appendChild(newCardBack);
-
-	fragment.appendChild(flipContainer);
-
-	document.querySelector(".flex-container").appendChild(fragment);
+		// delete the card the user clicked on
+		// display the updated list of cards
+	},
+	updateCard: function(){
+		// input field for the index of the card
+		// update the card based on the value of the input fields
+	}
 }
+
+function flipCard () {
+	newCardBack.classList.remove("hidden");
+}
+
+
+
 
 
 

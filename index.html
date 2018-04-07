@@ -4,26 +4,17 @@
 	<title></title>
 </head>
 <body>
+	<input type='number' id="cardnumber"></input>
 	<label>Question:</label>
 	<input type="text" id="question" name=""></textarea>
 	<label>Answer:</label>
 	<input type="text" id="answer" name=""></textarea>
-	<button onclick="myFunction()">Add card</button>
+	<button onclick="flashcardList.addCard()">Add card</button>
 
 	<div class="flex-container">
-		<div class="flip-container">
-			<div class="flashcard">
-				<button>Edit card</button>
-				<div class="front-inner">
-					<p>Write a function that displays "Hello World!"</p>
-				</div>
-
-				<div class="back-inner">
-					<p>function myFunction(){<br>console.log("Hello World!!");<br>}</p>
-
-				</div>
-			</div>
+		<div class="flashcard">
 		</div>
+		<button onclick="flipCard()"></button>	
 	</div>
 	<script type="text/javascript" src="scripts.js"></script>
 </body>

@@ -28,14 +28,36 @@ let flashcardList = {
 			// display newCardFront
 			let newCardFront = document.createElement("div");
 			newCardFront.className = "front-inner";
+			newCardFront.contentEditable = "true";
 			newCardFront.textContent = flashcardList.cards[i].front;
 			flashcard.appendChild(newCardFront);
 
 			// display newCardBack
 			let newCardBack = document.createElement("div");
 			newCardBack.className = "back-inner";
+			newCardBack.contentEditable = "true";
 			newCardBack.textContent = flashcardList.cards[i].back;
 			flashcard.appendChild(newCardBack);
+
+			//create an edit button
+			// let editButton = document.createElement("button");
+			// editButton.innerText="Edit";
+			// editButton.className="editButton";
+			// let editInput=document.createElement("input");
+			// editInput.type="text";
+			// editButton.addEventListener("click", function(event) {
+			// 	var listItem = this.parentNode;
+			// 	console.log(listItem);
+			// 	var editInput = listItem.querySelector('input[type=text]');
+			// 	var containsClass = listItem.classList.contains('editMode');
+			// 		if (containsClass) {
+			// 			newCardFront.innerText = editInput.value;
+			// 		} else {
+			// 			editInput.value = newCardFront.innerText;
+			// 		}
+			// 	listItem.classList.toggle('editMode');
+			// });
+			// flashcard.appendChild(editButton);
 
 			// create a delete button
 			let deleteButton = document.createElement("button");

@@ -4,18 +4,14 @@
 	<title></title>
 </head>
 <body>
-	<input type='number' id="cardnumber"></input>
 	<label>Question:</label>
 	<input type="text" id="question" name=""></textarea>
 	<label>Answer:</label>
 	<input type="text" id="answer" name=""></textarea>
 	<button onclick="flashcardList.addCard()">Add card</button>
 
-	<div class="flex-container">
-		<div class="flashcard">
-		</div>
-		<button onclick="flipCard()"></button>	
-	</div>
+	<ul id="flex-container">
+	</ul>
 	<script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>

@@ -22,19 +22,9 @@
   position: relative;
 }
 
-.deleteButton {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
 .front-inner, .back-inner {
   font-family: lucida console;
   border-radius: 10px;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .front-inner {
